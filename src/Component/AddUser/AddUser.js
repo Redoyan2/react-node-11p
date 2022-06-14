@@ -11,7 +11,7 @@ const AddUser = () => {
         const email = event.target.email.value;
         const user = { name, email };
         //post method
-        fetch('http://localhost:5000/user', {
+        fetch('http://localhost:5000/users', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -45,7 +45,7 @@ const AddUser = () => {
             <div>
                 {
                     users.map(user => <li
-                        key={user.id}
+                        key={user._id}
                     >name: {user.name}</li>)
                 }
             </div>
