@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../AddUser/AddUser.css';
+import User from './User';
 
 const AddUser = () => {
     const [users, setUsers] = useState([]);
@@ -44,9 +45,11 @@ const AddUser = () => {
             </form>
             <div>
                 {
-                    users.map(user => <li
-                        key={user._id}
-                    >name: {user.name}</li>)
+                    users.map(user => <User
+                    key={user._id}
+                    user={user}
+                    ></User>)
+                    
                 }
             </div>
         </div>
